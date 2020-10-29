@@ -235,7 +235,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 	 * and closes the connection after the response being sent.
 	 */
 	private void sendAndCleanupConnection(ChannelHandlerContext ctx, FullHttpResponse response) {
-		final FullHttpRequest request = this.request;
+		// final FullHttpRequest request = this.request;
 		final boolean keepAlive = HttpUtil.isKeepAlive(request);
 		HttpUtil.setContentLength(response, response.content().readableBytes());
 		if (!keepAlive) {
